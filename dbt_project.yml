@@ -38,6 +38,8 @@ clean-targets:         # directories to be removed by `dbt clean`
 models:
   taxi_rides_ny:
       # Applies to all files under models/.../
+      +schema: de_zoomcamp
+      +database: esoteric-realm-448604-v0
       staging:
           materialized: view
       core:
@@ -48,5 +50,7 @@ vars:
 seeds: 
     taxi_rides_ny:
         taxi_zone_lookup:
+            +schema: de_zoomcamp
+            +database: esoteric-realm-448604-v0
             +column_types:
                 locationid: numeric
